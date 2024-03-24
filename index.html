@@ -51,6 +51,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <div class="form__contact">
         <h2>Dejanos tu consulta</h2>
+        <form>
+            <div class="name__email">
+                <input type="text" placeholder="Nombre" id="name" name="Nombre del Cliente">
+                <input type="email" placeholder="Correo electrónico" id="email" name="Correo Electrónico">
+            </div>
+            <div class="subject__telephone">
+                <select id="inputState" class="form-select">
+                  <option>¿Cuál es tu negocio?</option>
+                  <option>Tengo un local</option>
+                  <option>Soy un revendedor</option>
+                  <option>Quiero iniciarme como revendedor</option>
+                  <option>Quiero comprar para mi</option>
+                </select>
+                <input type="text" placeholder="Teléfono" id="phone" name="Teléfono">
+            </div>
+
+            <textarea name="mensaje" placeholder="Mensaje" id="mensaje" name="Mensaje"></textarea>
+            <div class="container_btn__text">
+            <input id="enviarCorreo" type="submit" class="btn__text" value="Enviar Mensaje">
+            </div>
+            
+
+        </form>
+    </div>
+
+<script>
+const btnEnvio = document.getElementById('enviarCorreo');
+
+btnEnvio.addEventListener('click', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const inputState = document.getElementById('inputState').value;
+  const mensaje = document.getElementById('mensaje').value;
+  window.location.href=`mailto:euroconfortmayoristas@gmail.com?subject=Consulta%20Euro%20Confort&body=Nombre%3A${name}%0AEmail%3A${email}%0ATelefono%3A${phone}%0A%C2%BFCu%C3%A1l%20es%20tu%20negocio%3F%3A${inputState}%0AMensaje%3A${mensaje}`;
+});
+
+</script>
+
+      <!--<div class="form__contact">
+        <h2>Dejanos tu consulta</h2>
         <form action="https://formsubmit.co/euroconfortmayoristas@gmail.com" method="post" name="formulario_contacto">
             <div class="name__email">
                 <input type="text" placeholder="Nombre" name="nombre">
@@ -75,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <input type="hidden" name="_captcha" value="false">
 
         </form>
-    </div>
+    </div>-->
 
       <!--<div class="form__contact">
           <h2>Dejanos tu consulta</h2>
